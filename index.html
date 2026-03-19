@@ -487,6 +487,74 @@
         font-weight: 700;
         color: #fff8e0;
       }
+
+      /* ── MOBILE HAMBURGER ── */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #111;
+        border-radius: 2px;
+        transition: all 0.25s;
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        border-bottom: 1.5px solid #111;
+        padding: 0 24px;
+      }
+      .mobile-menu a {
+        font-size: 15px;
+        color: #111;
+        text-decoration: none;
+        padding: 14px 0;
+        border-bottom: 0.5px solid #eee;
+        font-weight: 500;
+      }
+      .mobile-menu a:last-child { border-bottom: none; }
+      .mobile-menu.open { display: flex; }
+
+      /* ── RESPONSIVE BREAKPOINTS ── */
+      @media (max-width: 768px) {
+        .nav { padding: 14px 24px; }
+        .nlinks, .nav > a { display: none; }
+        .hamburger { display: flex; }
+
+        .hero { grid-template-columns: 1fr; }
+        .hl { padding: 40px 24px; }
+        h1 { font-size: 28px; }
+        .hsub { font-size: 14px; max-width: 100%; }
+        .hbtns { flex-direction: column; }
+        .bp, .bs { width: 100%; text-align: center; }
+
+        .hr { border-left: none; border-top: 1.5px solid #111; padding: 32px 24px; }
+        .hcard { width: 100%; max-width: 320px; }
+
+        .sec { padding: 36px 24px; }
+        h2 { font-size: 24px; }
+        .ssub { font-size: 13px; }
+
+        .agrid { grid-template-columns: 1fr; gap: 24px; }
+        .wgrid { grid-template-columns: 1fr; gap: 12px; }
+        .svcs { grid-template-columns: 1fr; gap: 14px; }
+
+        .ctaband { padding: 36px 24px; }
+        .ctabtns { flex-direction: column; align-items: center; gap: 12px; }
+        .wa, .tr { width: 100%; justify-content: center; text-align: center; }
+
+        footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px; }
+      }
     </style>
   </head>
   <body>
@@ -501,10 +569,18 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a href="https://wa.me/6592362766" style="text-decoration: none"
-        ><button class="ncta">Book a trial</button></a
-      >
+      <a href="https://wa.me/6592362766" style="text-decoration:none;"><button class="ncta">Book a trial</button></a>
+      <button class="hamburger" onclick="document.getElementById('mmenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
+    <div class="mobile-menu" id="mmenu">
+      <a href="#about" onclick="document.getElementById('mmenu').classList.remove('open')">About</a>
+      <a href="#why" onclick="document.getElementById('mmenu').classList.remove('open')">Why mathing</a>
+      <a href="#pricing" onclick="document.getElementById('mmenu').classList.remove('open')">Pricing</a>
+      <a href="#faq" onclick="document.getElementById('mmenu').classList.remove('open')">FAQ</a>
+      <a href="https://wa.me/6592362766">Book a trial</a>
+    </div>
 
     <section class="hero">
       <div class="hl">
@@ -523,7 +599,7 @@
         </div>
         <h1>Real math skills,<br />taught by <i>Alexia</i></h1>
         <p class="hsub">
-          10 years of teaching A-level math, now accessible from anywhere.
+          10 years of JC Mathematics teaching, now accessible from anywhere.
           Quality lessons at a friendlier rate &mdash; no commute needed.
         </p>
         <div class="hbtns">
@@ -542,7 +618,7 @@
             <div>
               <div class="hcard-name">JC Math Specialist</div>
               <div class="badges">
-                <span class="sk">Software Engineer,</span>
+                <span class="sk">Software Engineer</span>
                 <span class="sk">Trilingual</span>
               </div>
             </div>
@@ -572,7 +648,7 @@
             <p>
               I've been teaching JC Math for over 10 years, both privately and
               as an ex-tutor at Indigo, where my student count grew from 1 to
-              over 15 per class. Now based in overseas, I bring the same quality
+              over 15 per class. Now based overseas, I bring the same quality
               online &mdash; at a much friendlier rate.
             </p>
             <p>
@@ -760,33 +836,30 @@
             </div>
           </div>
         </div>
-        <div class="svc" style="background: #f06a00">
+        <div class="svc" style="background: #FF8C3A">
           <span class="stag t21">2-to-1</span>
-          <h3 style="color: #fff">Pair Tuition</h3>
-          <p style="color: #ffd4a0">
+          <h3 style="color: #111">Pair Tuition</h3>
+          <p style="color: #5C2D00">
             Bring a friend and split the cost. Great for students who want a
             social learning environment.
           </p>
-          <div class="sp" style="color: #fff8e0">
-            $45 <span style="color: #ffd4a0">/ hr per pax</span>
+          <div class="sp" style="color: #111">
+            $45 <span style="color: #5C2D00">/ hr per pax</span>
           </div>
-          <div class="tn" style="color: #ffd4a0">
+          <div class="tn" style="color: #5C2D00">
             Trial: $40/pax flat (1.5 hrs)
           </div>
-          <div
-            class="sf"
-            style="border-top: 1.5px solid rgba(255, 255, 255, 0.3)"
-          >
-            <div class="feat" style="color: #ffd4a0">
-              <div class="dot" style="background: #fff8e0"></div>
+          <div class="sf" style="border-top: 1.5px solid rgba(0,0,0,0.15)">
+            <div class="feat" style="color: #5C2D00">
+              <div class="dot" style="background: #111"></div>
               Shared resources &amp; notes
             </div>
-            <div class="feat" style="color: #ffd4a0">
-              <div class="dot" style="background: #fff8e0"></div>
+            <div class="feat" style="color: #5C2D00">
+              <div class="dot" style="background: #111"></div>
               Offline support between lessons
             </div>
-            <div class="feat" style="color: #ffd4a0">
-              <div class="dot" style="background: #fff8e0"></div>
+            <div class="feat" style="color: #5C2D00">
+              <div class="dot" style="background: #111"></div>
               Great value for money
             </div>
           </div>
@@ -829,7 +902,7 @@
           <strong>How are lessons conducted?</strong>
           <p>
             Zoom with shared screens. I explain concepts step by step, then we
-            practise questions together. You always get a mix of guidance,
+            practise questions together. You will always get a mix of guidance,
             practice, and exam strategies &mdash; not just "watch me solve."
           </p>
         </div>
@@ -860,8 +933,8 @@
           <strong>Can you guarantee an A?</strong>
           <p>
             I can guarantee you'll learn something &mdash; but grades take
-            effort from both sides. Students who do consistent practice
-            alongside tuition see the best results. I'll match your commitment
+            effort from both sides. Students who practise consistently alongside
+            their lessons see the best results. I'll match your commitment
             and more.
           </p>
         </div>
@@ -873,7 +946,7 @@
     <div class="ctaband">
       <h2>Ready to start mathing?</h2>
       <p>
-        No commitment, no hardselling. Just reach out and we'll arrange a trial.
+        No commitment, no hard selling. Just reach out and we'll arrange a trial.
       </p>
       <div class="ctabtns">
         <a href="https://wa.me/6592362766" class="wa">
