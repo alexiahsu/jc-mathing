@@ -1,272 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mathing — JC H1 & H2 Math Tuition Online</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Plus Jakarta Sans',sans-serif;color:#111;background:#fff;}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;border-bottom:1.5px solid #111;background:#fff;position:sticky;top:0;z-index:100;}
-.logo{font-family:'Playfair Display',serif;font-size:20px;color:#F06A00;}
-.logo-tag{font-size:11px;color:#888;margin-top:2px;}
-.nlinks{display:flex;gap:26px;font-size:13px;color:#666;}
-.nlinks a{color:inherit;text-decoration:none;}
-.nlinks a:hover{color:#F06A00;}
-.ncta{background:#F06A00;color:#fff;font-size:13px;font-weight:600;padding:9px 20px;border-radius:40px;border:none;cursor:pointer;}
-.ncta:hover{background:#D95E00;}
-.hero{display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid #111;}
-.hl{padding:60px 48px 60px 40px;display:flex;flex-direction:column;justify-content:center;}
-.badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#fff;background:#111;padding:6px 14px;border-radius:40px;width:fit-content;margin-bottom:22px;}
-h1{font-family:'Playfair Display',serif;font-size:36px;line-height:1.15;margin-bottom:16px;color:#111;}
-h1 i{color:#F06A00;font-style:normal;}
-.hsub{font-size:15px;color:#555;line-height:1.7;margin-bottom:30px;max-width:360px;}
-.hbtns{display:flex;gap:12px;}
-.bp{background:#F06A00;color:#fff;font-size:14px;font-weight:600;padding:12px 26px;border-radius:40px;border:2px solid #F06A00;cursor:pointer;}
-.bp:hover{background:#D95E00;border-color:#D95E00;}
-.bs{background:#fff;color:#111;font-size:14px;font-weight:500;padding:12px 22px;border-radius:40px;border:2px solid #111;cursor:pointer;}
-.bs:hover{background:#f5f5f5;}
-.hr{background:#FFF8E0;display:flex;align-items:center;justify-content:center;padding:40px;border-left:1.5px solid #111;}
-.hcard{background:#fff;border-radius:16px;padding:24px;width:268px;border:2px solid #111;box-shadow:5px 5px 0 #111;}
-.hcard-top{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
-.av{width:46px;height:46px;border-radius:50%;background:#F06A00;border:2px solid #111;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:700;color:#fff;flex-shrink:0;}
-.hcard-name{font-family:'Playfair Display',serif;font-size:16px;color:#111;font-weight:700;margin-bottom:6px;}
-.badges{display:flex;flex-wrap:wrap;gap:5px;}
-.sk{font-size:11px;font-weight:600;padding:3px 9px;border-radius:20px;border:1.5px solid #111;background:#FFF8E0;color:#111;}
-.srow{display:flex;gap:10px;}
-.sbox{background:#FFF8E0;border-radius:9px;border:1.5px solid #111;padding:9px 12px;flex:1;text-align:center;}
-.snum{font-size:18px;font-weight:700;color:#F06A00;font-family:'Playfair Display',serif;}
-.slbl{font-size:11px;color:#555;margin-top:1px;}
-.div{height:1.5px;background:#111;}
-.sec{padding:50px 40px;background:#fff;}
-.secy{background:#FFFBEA;}
-.seca{background:#EEF5FF;}
-.sl{font-size:11px;font-weight:700;letter-spacing:2px;color:#F06A00;text-transform:uppercase;margin-bottom:8px;}
-h2{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px;line-height:1.22;color:#111;}
-.ssub{font-size:14px;color:#555;line-height:1.7;max-width:500px;margin-bottom:32px;}
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
-.abody{font-size:14px;color:#444;line-height:1.85;}
-.abody p{margin-bottom:12px;}
-.quals{display:flex;flex-direction:column;gap:10px;}
-.qual{display:flex;align-items:center;gap:12px;padding:13px 15px;background:#fff;border-radius:11px;border:1.5px solid #111;}
-.qi{width:32px;height:32px;background:#FFF0DC;border-radius:7px;border:1.5px solid #111;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.qual strong{font-size:13px;font-weight:600;color:#111;}
-.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.wcard{background:#fff;border-radius:12px;padding:20px;border:1.5px solid #111;}
-.wcard h4{font-size:14px;font-weight:600;color:#111;margin-bottom:6px;}
-.wcard p{font-size:13px;color:#555;line-height:1.65;}
-.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-.svc{background:#fff;border-radius:13px;padding:24px;border:1.5px solid #111;}
-.stag{display:inline-block;font-size:11px;font-weight:700;padding:4px 11px;border-radius:40px;margin-bottom:12px;border:1.5px solid #111;}
-.t11{background:#C8E0F8;color:#0A3660;}
-.t21{background:#FFF8E0;color:#111;}
-.t31{background:#FFE4C8;color:#6B2D00;}
-.svc h3{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:7px;color:#111;}
-.svc p{font-size:13px;color:#555;line-height:1.65;margin-bottom:14px;}
-.sp{font-size:24px;font-weight:700;color:#F06A00;font-family:'Playfair Display',serif;}
-.sp span{font-size:12px;font-weight:400;color:#888;}
-.tn{font-size:12px;color:#888;margin-top:6px;font-style:italic;}
-.sf{margin-top:12px;display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1.5px solid #eee;}
-.feat{display:flex;align-items:center;gap:7px;font-size:12px;color:#555;}
-.dot{width:6px;height:6px;border-radius:50%;background:#F06A00;flex-shrink:0;}
-.faq-list{display:flex;flex-direction:column;gap:12px;max-width:720px;}
-.faq{background:#fff;border-radius:11px;padding:16px 20px;border:1.5px solid #111;}
-.faq strong{font-size:13px;font-weight:600;color:#111;display:block;margin-bottom:5px;}
-.faq p{font-size:13px;color:#555;line-height:1.65;}
-.ctaband{background:#F06A00;padding:40px;text-align:center;border-top:1.5px solid #111;border-bottom:1.5px solid #111;}
-.ctaband h2{color:#fff;margin-bottom:10px;}
-.ctaband p{font-size:14px;color:#FFD4A0;margin-bottom:24px;}
-.ctabtns{display:flex;gap:14px;justify-content:center;}
-.wa{background:#fff;color:#111;font-size:14px;font-weight:600;padding:12px 28px;border-radius:40px;border:2px solid #111;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
-.wa:hover{background:#f5f5f5;}
-.tr{background:transparent;color:#fff;font-size:14px;font-weight:500;padding:12px 24px;border-radius:40px;border:2px solid #fff;cursor:pointer;text-decoration:none;}
-.tr:hover{background:rgba(255,255,255,0.1);}
-footer{background:#111;padding:26px 40px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#888;}
-.flogo{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#FFF8E0;}
-</style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mathing — JC H1 & H2 Math Tuition Online</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap");
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        color: #111;
+        background: #fff;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 40px;
+        border-bottom: 1.5px solid #111;
+        background: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        color: #f06a00;
+      }
+      .logo-tag {
+        font-size: 11px;
+        color: #888;
+        margin-top: 2px;
+      }
+      .nlinks {
+        display: flex;
+        gap: 26px;
+        font-size: 13px;
+        color: #666;
+      }
+      .nlinks a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .nlinks a:hover {
+        color: #f06a00;
+      }
+      .ncta {
+        background: #f06a00;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 9px 20px;
+        border-radius: 40px;
+        border: none;
+        cursor: pointer;
+      }
+      .ncta:hover {
+        background: #d95e00;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1.5px solid #111;
+      }
+      .hl {
+        padding: 60px 48px 60px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+        background: #111;
+        padding: 6px 14px;
+        border-radius: 40px;
+        width: fit-content;
+        margin-bottom: 22px;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        line-height: 1.15;
+        margin-bottom: 16px;
+        color: #111;
+      }
+      h1 i {
+        color: #f06a00;
+        font-style: normal;
+      }
+      .hsub {
+        font-size: 15px;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        max-width: 360px;
+      }
+      .hbtns {
+        display: flex;
+        gap: 12px;
+      }
+      .bp {
+        background: #f06a00;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 26px;
+        border-radius: 40px;
+        border: 2px solid #f06a00;
+        cursor: pointer;
+      }
+      .bp:hover {
+        background: #d95e00;
+        border-color: #d95e00;
+      }
+      .bs {
+        background: #fff;
+        color: #111;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 40px;
+        border: 2px solid #111;
+        cursor: pointer;
+      }
+      .bs:hover {
+        background: #f5f5f5;
+      }
+      .hr {
+        background: #fff8e0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+        border-left: 1.5px solid #111;
+      }
+      .hcard {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        width: 268px;
+        border: 2px solid #111;
+        box-shadow: 5px 5px 0 #111;
+      }
+      .hcard-top {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+      .av {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #f06a00;
+        border: 2px solid #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+      }
+      .hcard-name {
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        color: #111;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .sk {
+        font-size: 11px;
+        font-weight: 600;
+        color: #666;
+      }
+      .srow {
+        display: flex;
+        gap: 10px;
+      }
+      .sbox {
+        background: #fff8e0;
+        border-radius: 9px;
+        border: 1.5px solid #111;
+        padding: 9px 12px;
+        flex: 1;
+        text-align: center;
+      }
+      .snum {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f06a00;
+        font-family: "Playfair Display", serif;
+      }
+      .slbl {
+        font-size: 11px;
+        color: #555;
+        margin-top: 1px;
+      }
+      .div {
+        height: 1.5px;
+        background: #111;
+      }
+      .sec {
+        padding: 50px 40px;
+        background: #fff;
+      }
+      .secy {
+        background: #fffbea;
+      }
+      .seca {
+        background: #eef5ff;
+      }
+      .sl {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #f06a00;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 28px;
+        margin-bottom: 8px;
+        line-height: 1.22;
+        color: #111;
+      }
+      .ssub {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.7;
+        max-width: 500px;
+        margin-bottom: 32px;
+      }
+      .agrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+      .abody {
+        font-size: 14px;
+        color: #444;
+        line-height: 1.85;
+      }
+      .abody p {
+        margin-bottom: 12px;
+      }
+      .quals {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .qual {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 13px 15px;
+        background: #fff;
+        border-radius: 11px;
+        border: 1.5px solid #111;
+      }
+      .qi {
+        width: 32px;
+        height: 32px;
+        background: #fff0dc;
+        border-radius: 7px;
+        border: 1.5px solid #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .qual strong {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111;
+      }
+      .wgrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .wcard {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        border: 1.5px solid #111;
+      }
+      .wcard h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: #111;
+        margin-bottom: 6px;
+      }
+      .wcard p {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.65;
+      }
+      .svcs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .svc {
+        background: #fff;
+        border-radius: 13px;
+        padding: 24px;
+        border: 1.5px solid #111;
+      }
+      .stag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 11px;
+        border-radius: 40px;
+        margin-bottom: 12px;
+        border: 1.5px solid #111;
+      }
+      .t11 {
+        background: #c8e0f8;
+        color: #0a3660;
+      }
+      .t21 {
+        background: #fff8e0;
+        color: #111;
+      }
+      .t31 {
+        background: #ffe4c8;
+        color: #6b2d00;
+      }
+      .svc h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 16px;
+        margin-bottom: 7px;
+        color: #111;
+      }
+      .svc p {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.65;
+        margin-bottom: 14px;
+      }
+      .sp {
+        font-size: 24px;
+        font-weight: 700;
+        color: #f06a00;
+        font-family: "Playfair Display", serif;
+      }
+      .sp span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #888;
+      }
+      .tn {
+        font-size: 12px;
+        color: #888;
+        margin-top: 6px;
+        font-style: italic;
+      }
+      .sf {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding-top: 12px;
+        border-top: 1.5px solid #eee;
+      }
+      .feat {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+        color: #555;
+      }
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #f06a00;
+        flex-shrink: 0;
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+      }
+      .faq {
+        background: #fff;
+        border-radius: 11px;
+        padding: 16px 20px;
+        border: 1.5px solid #111;
+      }
+      .faq strong {
+        font-size: 13px;
+        font-weight: 600;
+        color: #111;
+        display: block;
+        margin-bottom: 5px;
+      }
+      .faq p {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.65;
+      }
+      .ctaband {
+        background: #f06a00;
+        padding: 40px;
+        text-align: center;
+        border-top: 1.5px solid #111;
+        border-bottom: 1.5px solid #111;
+      }
+      .ctaband h2 {
+        color: #fff;
+        margin-bottom: 10px;
+      }
+      .ctaband p {
+        font-size: 14px;
+        color: #ffd4a0;
+        margin-bottom: 24px;
+      }
+      .ctabtns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+      }
+      .wa {
+        background: #fff;
+        color: #111;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 28px;
+        border-radius: 40px;
+        border: 2px solid #111;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+      .wa:hover {
+        background: #f5f5f5;
+      }
+      .tr {
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 12px 24px;
+        border-radius: 40px;
+        border: 2px solid #fff;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .tr:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      footer {
+        background: #111;
+        padding: 26px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #888;
+      }
+      .flogo {
+        font-family: "Playfair Display", serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: #fff8e0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div>
+        <div class="logo">mathing</div>
+        <div class="logo-tag">doing math = mathing</div>
+      </div>
+      <div class="nlinks">
+        <a href="#about">About</a>
+        <a href="#why">Why mathing</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="https://wa.me/6592362766" style="text-decoration: none"
+        ><button class="ncta">Book a trial</button></a
+      >
+    </nav>
 
-<nav class="nav">
-  <div>
-    <div class="logo">mathing</div>
-    <div class="logo-tag">doing math = mathing</div>
-  </div>
-  <div class="nlinks">
-    <a href="#about">About</a>
-    <a href="#why">Why mathing</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
-  </div>
-  <a href="https://wa.me/6592362766" style="text-decoration:none;"><button class="ncta">Book a trial</button></a>
-</nav>
-
-<section class="hero">
-  <div class="hl">
-    <div class="badge">
-      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="#fff" stroke-width="1.4"/><path d="M4 6l1.5 1.5L8 4" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Online JC H1 &amp; H2 Math Tuition
-    </div>
-    <h1>Real math skills,<br>taught by <i>Alexia</i> &mdash; online.</h1>
-    <p class="hsub">10 years of JC Math teaching, now accessible from anywhere. Quality lessons at a friendlier rate &mdash; no commute needed.</p>
-    <div class="hbtns">
-      <a href="https://wa.me/6592362766" style="text-decoration:none;"><button class="bp">Book a free trial</button></a>
-      <a href="#pricing" style="text-decoration:none;"><button class="bs">View pricing</button></a>
-    </div>
-  </div>
-  <div class="hr">
-    <div class="hcard">
-      <div class="hcard-top">
-        <div class="av">A</div>
-        <div>
-          <div class="hcard-name">Alexia</div>
-          <div class="badges">
-            <span class="sk">JC Math Tutor</span>
-            <span class="sk">Engineer</span>
-            <span class="sk">Trilingual</span>
+    <section class="hero">
+      <div class="hl">
+        <div class="badge">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <circle cx="6" cy="6" r="5" stroke="#fff" stroke-width="1.4" />
+            <path
+              d="M4 6l1.5 1.5L8 4"
+              stroke="#fff"
+              stroke-width="1.4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Online JC H1 &amp; H2 Math Tuition
+        </div>
+        <h1>Real math skills,<br />taught by <i>Alexia</i></h1>
+        <p class="hsub">
+          10 years of teaching A-level math, now accessible from anywhere.
+          Quality lessons at a friendlier rate &mdash; no commute needed.
+        </p>
+        <div class="hbtns">
+          <a href="https://wa.me/6592362766" style="text-decoration: none"
+            ><button class="bp">Book a free trial</button></a
+          >
+          <a href="#pricing" style="text-decoration: none"
+            ><button class="bs">View pricing</button></a
+          >
+        </div>
+      </div>
+      <div class="hr">
+        <div class="hcard">
+          <div class="hcard-top">
+            <div class="av">A</div>
+            <div>
+              <div class="hcard-name">JC Math Specialist</div>
+              <div class="badges">
+                <span class="sk">Software Engineer,</span>
+                <span class="sk">Trilingual</span>
+              </div>
+            </div>
+          </div>
+          <div class="srow">
+            <div class="sbox">
+              <div class="snum">10+</div>
+              <div class="slbl">years teaching</div>
+            </div>
+            <div class="sbox">
+              <div class="snum">5</div>
+              <div class="slbl">grade jumps avg.</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="srow">
-        <div class="sbox"><div class="snum">10+</div><div class="slbl">years teaching</div></div>
-        <div class="sbox"><div class="snum">5</div><div class="slbl">grade jumps avg.</div></div>
+    </section>
+
+    <div class="div"></div>
+
+    <section class="sec" id="about">
+      <div class="sl">About</div>
+      <div class="agrid">
+        <div>
+          <h2>Hi, I'm Alexia &mdash;<br />and I love teaching math.</h2>
+          <div class="abody">
+            <p>
+              I've been teaching JC Math for over 10 years, both privately and
+              as an ex-tutor at Indigo, where my student count grew from 1 to
+              over 15 per class. Now based in overseas, I bring the same quality
+              online &mdash; at a much friendlier rate.
+            </p>
+            <p>
+              Online tuition means no long commutes, no MRT breakdowns, and no
+              rushing after school. Lessons are still personal, interactive, and
+              focused entirely on you &mdash; just with more flexibility and
+              comfort.
+            </p>
+            <p>
+              I'm not a "magic tutor" who guarantees an A overnight. But if
+              you're serious about improving, I'll match your commitment &mdash;
+              and more.
+            </p>
+          </div>
+        </div>
+        <div class="quals">
+          <div class="qual">
+            <div class="qi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="5.5"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                />
+                <path
+                  d="M8 5.5v3l2 1.5"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <strong>10 years specialising in H1 &amp; H2 Math</strong>
+          </div>
+          <div class="qual">
+            <div class="qi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <rect
+                  x="2"
+                  y="3"
+                  width="12"
+                  height="10"
+                  rx="1.5"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                />
+                <path
+                  d="M5 7h6M5 9.5h4"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <strong>SMU Business (Finance &amp; Analytics)</strong>
+          </div>
+          <div class="qual">
+            <div class="qi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M8 2l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L2.2 6.2l4-.6L8 2z"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <strong>Students improve by at least 5 grade jumps</strong>
+          </div>
+          <div class="qual">
+            <div class="qi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M3 8h10M8 3l5 5-5 5"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <strong>Software engineer in finance &amp; tech</strong>
+          </div>
+          <div class="qual">
+            <div class="qi">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <ellipse
+                  cx="8"
+                  cy="8"
+                  rx="6"
+                  ry="6"
+                  stroke="#F06A00"
+                  stroke-width="1.3"
+                />
+                <path
+                  d="M8 2c-2 2-2 10 0 12M2 8h12M2.5 5h11M2.5 11h11"
+                  stroke="#F06A00"
+                  stroke-width="1.1"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <strong
+              >Trilingual &mdash; English, Chinese &amp; Japanese (N1)</strong
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="div"></div>
+
+    <section class="sec secy" id="why">
+      <div class="sl">Why mathing</div>
+      <h2>Learn more with less</h2>
+      <p class="ssub">
+        Less money and less wasted time &mdash; that's the mathing promise.
+      </p>
+      <div class="wgrid">
+        <div class="wcard">
+          <h4>Methodology</h4>
+          <p>
+            We won't just do questions blindly. We'll strengthen your concepts
+            and knowledge of the most common question types.
+          </p>
+        </div>
+        <div class="wcard">
+          <h4>Quality lessons</h4>
+          <p>
+            Clear step-by-step explanations, plenty of practice, and
+            exam-specific tips you can actually use on the day.
+          </p>
+        </div>
+        <div class="wcard">
+          <h4>Resources</h4>
+          <p>
+            Carefully chosen notes, past papers, and practice questions &mdash;
+            no fluff, just what you really need to know.
+          </p>
+        </div>
+        <div class="wcard">
+          <h4>Offline support</h4>
+          <p>
+            Stuck between classes? I'll help out so you don't have to wait a
+            whole week to get unstuck.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="div"></div>
+
+    <section class="sec" id="pricing">
+      <div class="sl">Pricing</div>
+      <h2>Simple, honest rates</h2>
+      <p class="ssub">
+        All lessons are 1.5 hrs by default via Zoom. Flexible duration based on
+        your needs. Trial lessons available with no commitment.
+      </p>
+      <div class="svcs">
+        <div class="svc">
+          <span class="stag t11">1-to-1</span>
+          <h3>Private Tuition</h3>
+          <p>
+            Fully personalised to your pace, weak areas, and exam schedule. Use
+            your own school materials too.
+          </p>
+          <div class="sp">$55 <span>/ hr</span></div>
+          <div class="tn">Trial: $50 flat (1.5 hrs)</div>
+          <div class="sf">
+            <div class="feat">
+              <div class="dot"></div>
+              Custom lesson plan
+            </div>
+            <div class="feat">
+              <div class="dot"></div>
+              Offline support between lessons
+            </div>
+            <div class="feat">
+              <div class="dot"></div>
+              Paper marking for committed students
+            </div>
+          </div>
+        </div>
+        <div class="svc" style="background: #f06a00">
+          <span class="stag t21">2-to-1</span>
+          <h3 style="color: #fff">Pair Tuition</h3>
+          <p style="color: #ffd4a0">
+            Bring a friend and split the cost. Great for students who want a
+            social learning environment.
+          </p>
+          <div class="sp" style="color: #fff8e0">
+            $45 <span style="color: #ffd4a0">/ hr per pax</span>
+          </div>
+          <div class="tn" style="color: #ffd4a0">
+            Trial: $40/pax flat (1.5 hrs)
+          </div>
+          <div
+            class="sf"
+            style="border-top: 1.5px solid rgba(255, 255, 255, 0.3)"
+          >
+            <div class="feat" style="color: #ffd4a0">
+              <div class="dot" style="background: #fff8e0"></div>
+              Shared resources &amp; notes
+            </div>
+            <div class="feat" style="color: #ffd4a0">
+              <div class="dot" style="background: #fff8e0"></div>
+              Offline support between lessons
+            </div>
+            <div class="feat" style="color: #ffd4a0">
+              <div class="dot" style="background: #fff8e0"></div>
+              Great value for money
+            </div>
+          </div>
+        </div>
+        <div class="svc">
+          <span class="stag t31">3-to-1</span>
+          <h3>Group Tuition</h3>
+          <p>
+            Best value for students who thrive in a small group setting with
+            structured lessons.
+          </p>
+          <div class="sp">$35 <span>/ hr per pax</span></div>
+          <div class="tn">Trial: $30/pax flat (1.5 hrs)</div>
+          <div class="sf">
+            <div class="feat">
+              <div class="dot"></div>
+              Structured group sessions
+            </div>
+            <div class="feat">
+              <div class="dot"></div>
+              Shared notes &amp; worksheets
+            </div>
+            <div class="feat">
+              <div class="dot"></div>
+              Most affordable option
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="div"></div>
+
+    <section class="sec seca" id="faq">
+      <div class="sl">FAQ</div>
+      <h2>Common questions</h2>
+      <p class="ssub">Straight answers to things students usually ask.</p>
+      <div class="faq-list">
+        <div class="faq">
+          <strong>How are lessons conducted?</strong>
+          <p>
+            Zoom with shared screens. I explain concepts step by step, then we
+            practise questions together. You always get a mix of guidance,
+            practice, and exam strategies &mdash; not just "watch me solve."
+          </p>
+        </div>
+        <div class="faq">
+          <strong>How long is each lesson?</strong>
+          <p>
+            1.5 hours by default, but flexible. Consultation-style or longer
+            2-hour sessions (with a 5-min break) are both possible depending on
+            your needs.
+          </p>
+        </div>
+        <div class="faq">
+          <strong>Can I use my school's materials?</strong>
+          <p>
+            Yes, definitely &mdash; for 1-to-1 students. We can work through
+            your tutorials, lecture notes, or any other resources. I'll share
+            extra practice and summaries when needed.
+          </p>
+        </div>
+        <div class="faq">
+          <strong>Is there a referral benefit?</strong>
+          <p>
+            Yes! For each friend you refer who continues with tuition, you get
+            $25 cashback via PayNow/PayLah.
+          </p>
+        </div>
+        <div class="faq">
+          <strong>Can you guarantee an A?</strong>
+          <p>
+            I can guarantee you'll learn something &mdash; but grades take
+            effort from both sides. Students who do consistent practice
+            alongside tuition see the best results. I'll match your commitment
+            and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="div"></div>
+
+    <div class="ctaband">
+      <h2>Ready to start mathing?</h2>
+      <p>
+        No commitment, no hardselling. Just reach out and we'll arrange a trial.
+      </p>
+      <div class="ctabtns">
+        <a href="https://wa.me/6592362766" class="wa">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M13.5 2.5A7.5 7.5 0 002.1 11.3L1 15l3.8-1a7.5 7.5 0 008.7-11.5z"
+              stroke="#111"
+              stroke-width="1.3"
+            />
+            <path
+              d="M6 6.5c.5 1 1.5 2 2.5 2.5"
+              stroke="#111"
+              stroke-width="1.3"
+              stroke-linecap="round"
+            />
+          </svg>
+          WhatsApp Alexia
+        </a>
+        <a href="https://wa.me/6592362766" class="tr">Book a trial lesson</a>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="div"></div>
-
-<section class="sec" id="about">
-  <div class="sl">About</div>
-  <div class="agrid">
-    <div>
-      <h2>Hi, I'm Alexia &mdash;<br>and I love teaching math.</h2>
-      <div class="abody">
-        <p>I've been teaching JC Math for over 10 years, both privately and as an ex-tutor at Indigo, where my student count grew from 1 to over 12 per class. Now based in Japan, I bring the same quality online &mdash; at a much friendlier rate.</p>
-        <p>Online tuition means no long commutes, no MRT breakdowns, and no rushing after school. Lessons are still personal, interactive, and focused entirely on you &mdash; just with more flexibility and comfort.</p>
-        <p>I'm not a "magic tutor" who guarantees an A overnight. But if you're serious about improving, I'll match your commitment &mdash; and more.</p>
+    <footer>
+      <div class="flogo">mathing &middot; doing math = mathing</div>
+      <div>
+        &copy; 2025 mathing &middot; JC H1 &amp; H2 Math Tuition &middot; Online
       </div>
-    </div>
-    <div class="quals">
-      <div class="qual">
-        <div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#F06A00" stroke-width="1.3"/><path d="M5 7h6M5 9.5h4" stroke="#F06A00" stroke-width="1.3" stroke-linecap="round"/></svg></div>
-        <strong>SMU Business (Finance &amp; Analytics)</strong>
-      </div>
-      <div class="qual">
-        <div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#F06A00" stroke-width="1.3"/><path d="M8 5.5v3l2 1.5" stroke="#F06A00" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <strong>10 years specialising in H1 &amp; H2 Math</strong>
-      </div>
-      <div class="qual">
-        <div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="#F06A00" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <strong>Software engineer in finance &amp; tech</strong>
-      </div>
-      <div class="qual">
-        <div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><ellipse cx="8" cy="8" rx="6" ry="6" stroke="#F06A00" stroke-width="1.3"/><path d="M8 2c-2 2-2 10 0 12M2 8h12M2.5 5h11M2.5 11h11" stroke="#F06A00" stroke-width="1.1" stroke-linecap="round"/></svg></div>
-        <strong>Trilingual &mdash; English, Chinese &amp; Japanese (N1)</strong>
-      </div>
-      <div class="qual">
-        <div class="qi"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4L2.2 6.2l4-.6L8 2z" stroke="#F06A00" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
-        <strong>Students improve by at least 5 grade jumps</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<section class="sec secy" id="why">
-  <div class="sl">Why mathing</div>
-  <h2>Learn more with less</h2>
-  <p class="ssub">Less money and less wasted time &mdash; that's the mathing promise.</p>
-  <div class="wgrid">
-    <div class="wcard"><h4>Methodology</h4><p>We won't just do questions blindly. We'll strengthen your concepts and knowledge of the most common question types.</p></div>
-    <div class="wcard"><h4>Quality lessons</h4><p>Clear step-by-step explanations, plenty of practice, and exam-specific tips you can actually use on the day.</p></div>
-    <div class="wcard"><h4>Resources</h4><p>Carefully chosen notes, past papers, and practice questions &mdash; no fluff, just what you really need to know.</p></div>
-    <div class="wcard"><h4>Offline support</h4><p>Stuck between classes? I'll help out so you don't have to wait a whole week to get unstuck.</p></div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<section class="sec" id="pricing">
-  <div class="sl">Pricing</div>
-  <h2>Simple, honest rates</h2>
-  <p class="ssub">All lessons are 1.5 hrs by default via Zoom. Flexible duration based on your needs. Trial lessons available with no commitment.</p>
-  <div class="svcs">
-    <div class="svc">
-      <span class="stag t11">1-to-1</span>
-      <h3>Private Tuition</h3>
-      <p>Fully personalised to your pace, weak areas, and exam schedule. Use your own school materials too.</p>
-      <div class="sp">$55 <span>/ hr</span></div>
-      <div class="tn">Trial: $50 flat (1.5 hrs)</div>
-      <div class="sf">
-        <div class="feat"><div class="dot"></div>Custom lesson plan</div>
-        <div class="feat"><div class="dot"></div>Offline support between lessons</div>
-        <div class="feat"><div class="dot"></div>Paper marking for committed students</div>
-      </div>
-    </div>
-    <div class="svc" style="background:#F06A00;">
-      <span class="stag t21">2-to-1</span>
-      <h3 style="color:#fff;">Pair Tuition</h3>
-      <p style="color:#FFD4A0;">Bring a friend and split the cost. Great for students who want a social learning environment.</p>
-      <div class="sp" style="color:#FFF8E0;">$45 <span style="color:#FFD4A0;">/ hr per pax</span></div>
-      <div class="tn" style="color:#FFD4A0;">Trial: $40/pax flat (1.5 hrs)</div>
-      <div class="sf" style="border-top:1.5px solid rgba(255,255,255,0.3);">
-        <div class="feat" style="color:#FFD4A0;"><div class="dot" style="background:#FFF8E0;"></div>Shared resources &amp; notes</div>
-        <div class="feat" style="color:#FFD4A0;"><div class="dot" style="background:#FFF8E0;"></div>Offline support between lessons</div>
-        <div class="feat" style="color:#FFD4A0;"><div class="dot" style="background:#FFF8E0;"></div>Great value for money</div>
-      </div>
-    </div>
-    <div class="svc">
-      <span class="stag t31">3-to-1</span>
-      <h3>Group Tuition</h3>
-      <p>Best value for students who thrive in a small group setting with structured lessons.</p>
-      <div class="sp">$35 <span>/ hr per pax</span></div>
-      <div class="tn">Trial: $30/pax flat (1.5 hrs)</div>
-      <div class="sf">
-        <div class="feat"><div class="dot"></div>Structured group sessions</div>
-        <div class="feat"><div class="dot"></div>Shared notes &amp; worksheets</div>
-        <div class="feat"><div class="dot"></div>Most affordable option</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<section class="sec seca" id="faq">
-  <div class="sl">FAQ</div>
-  <h2>Common questions</h2>
-  <p class="ssub">Straight answers to things students usually ask.</p>
-  <div class="faq-list">
-    <div class="faq"><strong>How are lessons conducted?</strong><p>Zoom with shared screens. I explain concepts step by step, then we practise questions together. You always get a mix of guidance, practice, and exam strategies &mdash; not just "watch me solve."</p></div>
-    <div class="faq"><strong>How long is each lesson?</strong><p>1.5 hours by default, but flexible. Consultation-style or longer 2-hour sessions (with a 5-min break) are both possible depending on your needs.</p></div>
-    <div class="faq"><strong>Can I use my school's materials?</strong><p>Yes, definitely &mdash; for 1-to-1 students. We can work through your tutorials, lecture notes, or any other resources. I'll share extra practice and summaries when needed.</p></div>
-    <div class="faq"><strong>Is there a referral benefit?</strong><p>Yes! For each friend you refer who continues with tuition, you get $25 cashback via PayNow/PayLah.</p></div>
-    <div class="faq"><strong>Can you guarantee an A?</strong><p>I can guarantee you'll learn something &mdash; but grades take effort from both sides. Students who do consistent practice alongside tuition see the best results. I'll match your commitment and more.</p></div>
-  </div>
-</section>
-
-<div class="div"></div>
-
-<div class="ctaband">
-  <h2>Ready to start mathing?</h2>
-  <p>No commitment, no hardselling. Just reach out and we'll arrange a trial.</p>
-  <div class="ctabtns">
-    <a href="https://wa.me/6592362766" class="wa">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13.5 2.5A7.5 7.5 0 002.1 11.3L1 15l3.8-1a7.5 7.5 0 008.7-11.5z" stroke="#111" stroke-width="1.3"/><path d="M6 6.5c.5 1 1.5 2 2.5 2.5" stroke="#111" stroke-width="1.3" stroke-linecap="round"/></svg>
-      WhatsApp Alexia
-    </a>
-    <a href="https://wa.me/6592362766" class="tr">Book a trial lesson</a>
-  </div>
-</div>
-
-<footer>
-  <div class="flogo">mathing &middot; doing math = mathing</div>
-  <div>&copy; 2025 mathing &middot; JC H1 &amp; H2 Math Tuition &middot; Online</div>
-</footer>
-
-</body>
+    </footer>
+  </body>
 </html>
